@@ -30,4 +30,3 @@ class Preprocessing:
         if len(self.params) == 0:
             raise Exception(f"{self.preprocess_type.name} instance is not trained yet. Please call 'train' first")
         return self.preprocess_func(x, init=False)
-    

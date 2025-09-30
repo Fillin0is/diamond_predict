@@ -1,8 +1,7 @@
 import os
-
 from easydict import EasyDict
-
 from utils.enums import PreprocessingType
+
 
 ROOT_DIR = os.path.dirname(os.path.dirname(__file__))
 
