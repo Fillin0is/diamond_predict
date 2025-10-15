@@ -38,7 +38,16 @@ class BasisFunctionProcessor:
 
         if self.function_params.get('bias', params_config.default.bias):
             return np.hstack([transformed_x[:, :1], self.preprocessing.train(transformed_x[:, 1:])])
+        else:
+            return self.preprocessing.train(transformed_x)
 
-    def transform():
-        pass
+    def transform(self, x: np.ndarray) -> np.ndarray:
+        """Makes feature transformation according to the chosen basis function"""
+        transformed_x = self.basis_function(x)
+
+        if self.function_params.get('bias', params_config.default.bias):
+            return np.hstack([transformed_x[:, :1], self.preprocessing(transformed_x[:, 1:])])
+        else:
+            return self.preprocessing(transformed_x)
+        
 
